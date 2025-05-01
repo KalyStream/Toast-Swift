@@ -864,8 +864,12 @@ private extension UIView {
 	}
 
 	static var safeTopAreaHeight: CGFloat {
-		if #available(iOS 11.0, *) {
-			return UIApplication.shared.keyWindow?.safeAreaInsets.top ?? 0
+		if #available(iOS 13.0, *) {
+			let scenes = UIApplication.shared.connectedScenes
+			let windowScene = scenes.first as? UIWindowScene
+			let window = windowScene?.windows.first
+			let safeAreaInsets = window?.safeAreaInsets
+			return safeAreaInsets?.top ?? 0
 		} else {
 			return 0
 		}
