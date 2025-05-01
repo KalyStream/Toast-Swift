@@ -657,7 +657,7 @@ public struct ToastStyle {
 	/**
 	 Top Padding of Toast container view
 	 */
-	public var topPadding: CGFloat = 30
+	public var topPadding: CGFloat = 40
 
 	/**
 	 The corner radius. Default is 10.0.
